@@ -1,0 +1,7 @@
+//prime-solo-mongo
+
+Create a collection named orders.
+Insert at least 3 documents that represent an order. IMPORTANT: See section below for fields. Order dates should be: 2017-02-03, 2017-04-04, 2017-01-02
+Find all orders and make them look pretty.
+Find all orders with an orderDate that is after 1/31/2017.
+Change the orderTotal from 2/3/2017 to 63 dollars (you do NOT have to ensure the lineItems' unitPrice * quantity add up to the orderTotal)
