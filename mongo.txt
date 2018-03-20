@@ -1,7 +1,28 @@
 //prime-solo-mongo
 
-Create a collection named orders.
-Insert at least 3 documents that represent an order. IMPORTANT: See section below for fields. Order dates should be: 2017-02-03, 2017-04-04, 2017-01-02
-Find all orders and make them look pretty.
-Find all orders with an orderDate that is after 1/31/2017.
-Change the orderTotal from 2/3/2017 to 63 dollars (you do NOT have to ensure the lineItems' unitPrice * quantity add up to the orderTotal)
+1. Create a collection named orders.
+2. Insert at least 3 documents that represent an order. 
+  //db.orders.insert({orderDate: new Date('2018-03-20'),   
+              orderTotal: 20.0,   
+              lineItems: [{unitPrice: 5.0, quantity: 4, productName: "mouse pad"}]});
+
+  //db.orders.insert({orderDate: new Date('2018-02-20'),   
+          orderTotal: 100.0,   
+          lineItems: [{unitPrice: 20.0, quantity: 5, productName: "chair"}]});
+
+  //db.orders.insert({orderDate: new Date('2018-01-15'),
+            orderTotal: 75.0,
+            lineItems: [{unitPrice: 25.0, quantity: 3, productName: "table"}]});
+
+3. Find all orders and make them look pretty.
+
+//db.orders.find().pretty();
+
+4. Find all orders with an orderDate that is after 1/31/2017.
+
+//db.orders.find({orderDate: {$gt: new Date('2017-01-31')}});
+
+5. Change the orderTotal from 2/3/2017 to 63 dollars  - using 2/20/2018
+  (you do NOT have to ensure the lineItems' unitPrice * quantity add up to the orderTotal)
+  
+  //db.orders.update({orderDate: new Date('2018-02-20')}, {$set: {orderTotal: "63.0"}});
